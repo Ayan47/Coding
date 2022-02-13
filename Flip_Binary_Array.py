@@ -13,7 +13,7 @@
 def find_max_ones(A):
     overall = 0
     countone=0
-    maxval=0
+    maxval=A[0]
     for i in range(len(A)):
         if A[i]==0:
             A[i]=1
@@ -22,10 +22,9 @@ def find_max_ones(A):
             countone+=1
     for i in range(len(A)):
         overall+=A[i]
+        maxval=max(maxval,overall)
         if overall<0:
             overall=0
-        if overall>maxval:
-            maxval=overall
     return(maxval+countone)
 
 
